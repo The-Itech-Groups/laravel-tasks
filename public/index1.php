@@ -182,12 +182,12 @@ $current_positions = [];  // will fill as we loop
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>South Sudan Premier League</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.css"/>
+	
     <style>
         :root {
             --primary-color: #1f2937;
@@ -257,13 +257,19 @@ $current_positions = [];  // will fill as we loop
 }
 </style>
 
+<style>
+.no-underline {
+    text-decoration: none;
+}
+</style>
+
 </head>
 <body>
-<div id="mainContainer" class="container mt-4 overlay">
-    <div class="header-left mb-3">
-        <img src="images/banner.gif" alt="banner" class="banner" style="border-radius:5%; width: 1250px; height: 170px;">
+<div id="mainContainer" class="container mt-0 overlay">
+    <div class="header-left mb-0">
+        <img src="images/a.jpg" alt="banner" class="banner" style="border-radius:5%; width: 1250px; height: 170px;">
     </div>
-	    <div class="header-center mb-3">
+	    <div class="header-center mb-0">
         <h1>South Sudan Premier League</h1>
     </div>
 
@@ -271,8 +277,9 @@ $current_positions = [];  // will fill as we loop
     <!-- Next Fixture Countdown & Carousel -->
     <div class="row mb-3">
        <div class="col-md-6 text-center animate__animated animate__fadeInUp">
-            <img src="images/player.gif" alt="banner" class="banner" style="border-radius:5%; width: auto; height: 380px;">
+            <img src="images/c.png" alt="banner" class="banner" style="border-radius:5%; width: auto; height: 380px;">
         </div>
+		
 		<!-- Carousel/Slide show -->
         <div class="col-md-4 animate__animated animate__fadeInUp">
             <div id="fixtureCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -302,19 +309,20 @@ $current_positions = [];  // will fill as we loop
               </button>
             </div>
         </div>
+		
 	<!--Menu-->	
     </div>
-	    <div class="nav-buttons text-center mb-3">
-        <a href="match_results.php" class="btn me-2 animate__animated animate__pulse animate__delay-2s">📅 Results</a>
-        <a href="view_match_stats.php" class="btn me-2 animate__animated animate__pulse animate__delay-3s">📊 Stats</a>
-        <a href="fixtures.php" class="btn me-2 animate__animated animate__pulse animate__delay-4s">📋 Fixtures</a>
-        <a href="scorers_assists_Leaderboard.php" class="btn btn-outline-light me-2 animate__animated animate__pulse animate__delay-5s">⚽ Leaderboards</a>
-        <a href="players.php" class="btn me-2 animate__animated animate__pulse animate__delay-1s">👥 Players</a>
-	    <a href="teams.php" class="btn me-2 animate__animated animate__pulse">🏆 Teams</a>
-	<!--    <a href="admin/login.php" class="btn me-2 animate__animated animate__pulse animate__delay-6s">⚙️ Admin</a>  -->
-	<!-- Dark/Light Toggle -->
-    <button id="modeToggle" class="btn me-2 animate__animated animate__pulse animate__delay-7s">Toggle Light/Dark</button>   
+	    <div class="nav-links text-left mb-3">
+        <a href="match_results.php" class="no-underline">📅 Results</a>
+        <a href="view_match_stats.php" class="no-underline">📊 Stats</a>
+        <a href="fixtures.php" class="no-underline">📋 Fixtures</a>
+        <a href="scorers_assists_Leaderboard.php" class="no-underline">⚽ Leaderboards</a>
+        <a href="players.php" class="no-underline">👥 Players</a>
+	    <a href="teams.php" class="no-underline">🏆 Teams</a>
+		
+    <label id="modeToggle" class="no-underline"><img src="images/ssfa.jpg" alt="banner" class="banner" style="border-radius:5%; width: 17px; height: 17px;"> Toggle light/dark</label>   
     </div> 	
+	<hr class="border-light">
 
 	<!-- Recent Match Results -->
     <h3>📅 Recent Match Results</h3>
@@ -582,7 +590,7 @@ $current_positions = [];  // will fill as we loop
             </tbody>
         </table>
     </div>
-	
+	<hr class="border-light">
 
     <!-- Upcoming Fixtures -->
     <h3>📅 Upcoming Matches</h3>
@@ -621,6 +629,8 @@ $current_positions = [];  // will fill as we loop
             </tbody>
         </table>
     </div>
+	<hr class="border-light">
+	
     <!-- Top Scorers -->
     <h3>⚽ Top Scorers</h3>
     <div class="table-responsive match-table">
@@ -669,9 +679,9 @@ $current_positions = [];  // will fill as we loop
 	
 	<!--Score_Assist Leaderboard-->
 	<div class="topscorers-section">
-    <?php include('include_scorers_assists_leaderboard.php'); ?>
+    <?php include('includes/include_scorers_assists_leaderboard.php'); ?>
     </div>
-
+	<hr class="border-light">
 	
     <!-- Animated counters -->
     <div class="row text-center my-4">
@@ -707,14 +717,18 @@ $current_positions = [];  // will fill as we loop
 	
     <div class="col-md-6 mb-4"><canvas id="formChart"></canvas></div>
     <div class="col-md-6 mb-4"><canvas id="scorerChart"></canvas></div>
-	
     </div>
+	<hr class="border-light">
+	
     <!-- Social Feed -->
     <h3>?? Latest Posts</h3>
     <a class="twitter-timeline" data-height="400" href="https://twitter.com/YourLeagueHandle?ref_src=twsrc%5Etfw">Posts by Official League</a>
     <!--Footer-->
     <footer class="text-center mt-5">
-        &copy; <?= date('Y') ?> Premier League Manager by THE ITECH GROUPS - Inspired by EPL.
+	      <div class="col-md-6 text-center animate__animated animate__fadeInUp">
+            <img src="images/ssfa.jpg" alt="banner" class="banner" style="border-radius:5%; width: 40px; height: 40px;">
+        </div>
+        &copy; <?= date('Y') ?> South Sudan Premier League Manager by THE ITECH GROUPS - Inspired by EPL.
     </footer>
 </div><!-- /#mainContainer -->
 
